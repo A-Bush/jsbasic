@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    todo вывести все оценки ученика по его фамилии
+       var student= ['','Иванов','Петров','Сидоров'];
+        var mark = [[],[2,3,5],[3,1,4],[2,2,2]];
+        var inputStudent= prompt('Выберите имя студента \n Иванов\n Петров \n Сидоров');
+        var countStudent = student.length;
+        for (number=0; number< countStudent; number++){
+            if (inputStudent==student[number]){
+                alert('Оценки'+' '+student[number]+'а' +'\n '+ mark[number]);
+            }
+        }
+
+
+</script>
+<script>
+////    todo index ученика+ index учителя= оценка
+        var inputStudent = prompt('Выберите код преподавателя');
+        var inputPrepod = prompt('Выберите код студента');
+        var mark = [[2,3,5],[3,1,4],[2,2,2],[5,5,3]];
+           alert(mark[inputStudent][inputPrepod]);
+</script>
+<script>
+//    //todo Имя ученика+ имя учителя= оценка
+            var student= ['iv','pet','sid','vas'];
+            var prepod = ['nn', 'vv', 'pp'];
+            var mark = [[2,3,5],[3,1,4],[2,2,2],[5,5,3]];
+            var inputPrepod = prompt('Выберите имя преподавателя \n nn \n vv \n pp');
+            var inputStudent = prompt('Выберите имя студента \n iv \n pet \n sid \n vas');
+            var countP = prepod.length;
+            var countS = student.length;
+            for(number= 0; number< countP; number++ ){
+                if(prepod[number]== inputPrepod){
+                    for(numberS= 0; numberS< countS; numberS++ ){
+                        if(student[numberS]==inputStudent){
+                            alert(mark[numberS][number]);
+                }
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

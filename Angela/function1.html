@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function1</title>
+</head>
+<body>
+<script>
+	function Add(x,y){
+		x=+x;
+		y=+y;
+		return x+y;
+	}
+
+	function Sub(x,y){
+		return x-y;
+	}
+
+	function Mul(x,y){
+		return x*y;
+	}
+
+	function Del(x,y){
+		if (y==0) {
+			alert("This operation cannot be done. Change your second parameter.");
+		}
+		else {
+        return x/y;
+		}	
+	}
+
+	var fpar=prompt("Enter first number","");
+	var spar=prompt("Enter second parameter","");
+	var operation=prompt("Which operation would you like to do? (Add, Sub, Mul, Del)","");
+
+
+	switch (operation){
+		case "Add":
+			alert(Add(fpar,spar));
+			break;
+		case "Sub":
+			alert(Sub(fpar,spar));
+			break;
+		case "Mul":
+			alert(Mul(fpar,spar));
+			break;
+		case "Del":
+			alert(Del(fpar,spar));
+			break;
+		default:
+			alert("You must enter the parameters");
+	}
+</script>	
+</body>
+</html>
