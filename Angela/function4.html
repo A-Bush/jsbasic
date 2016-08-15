@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function4</title>
+</head>
+<body>
+</body>
+
+<script>
+	var value=prompt("Enter numbers and operations","");
+	var numbers=[];
+	var signs=[];
+
+	function parseValue (){
+		var tokens = value.split(",");
+		console.log(tokens);
+		for (var i=0; i<tokens.length;i++){
+			if (parseInt(tokens[i])) {
+				numbers.push(parseInt(tokens[i]));
+			} else {
+				signs.push(tokens[i]);
+			}
+		}
+	}
+
+	function calculateExpression() {
+		if (numbers.length>0){
+			var result = numbers[0];
+			for (var i=0; i<numbers.length-1; i++) {
+				result = calculateOneOperation(result, numbers[i+1], signs[i]);
+			}
+			return result;
+		}
+		else {
+			return 0;
+		}
+	}
+
+	function calculateOneOperation(number1, number2, sign) {
+		switch(sign) {
+			case "+": {
+				return number1 + number2;
+			}
+			case "-": {
+				return number1 - number2;
+			}
+			case "*": {
+				return number1 * number2;
+			}
+			case "/": {
+				return number1 / number2;
+			}
+		}
+
+
+	}
+
+	parseValue();
+	console.log("Result: " + calculateExpression());
+</script>
+
+</html>

@@ -20,19 +20,29 @@
 		return x*y;
 	}
 
-	function Del(x,y){
+	function Div(x,y){
 		if (y==0) {
 			alert("This operation cannot be done. Change your second parameter.");
+			general();
 		}
 		else {
-        return x/y;
+			alert(x/y);
+        	return x/y;
 		}	
 	}
-
+	function general(){
 	var fpar=prompt("Enter first number","");
+	if (fpar==null){
+		return;
+	}
 	var spar=prompt("Enter second parameter","");
-	var operation=prompt("Which operation would you like to do? (Add, Sub, Mul, Del)","");
-
+	if (spar==null){
+		return;
+	}
+	var operation=prompt("Which operation would you like to do? (Add, Sub, Mul, Div)","");
+	if (operation==null){
+		return;
+	}
 
 	switch (operation){
 		case "Add":
@@ -44,12 +54,14 @@
 		case "Mul":
 			alert(Mul(fpar,spar));
 			break;
-		case "Del":
-			alert(Del(fpar,spar));
+		case "Div":
+			Div(fpar,spar);
 			break;
 		default:
 			alert("You must enter the parameters");
 	}
+}
+general();
 </script>	
 </body>
 </html>

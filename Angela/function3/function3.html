@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Forms</title>
+		<link href="function3.css" rel="stylesheet">
+		<script src="function3.js"></script>
+	</head>
+	<body>
+		<form method="post" action="" name="card-details" id="form-blanc">
+
+			<fieldset class="style">
+				<legend class="legend">Your details</legend><br/>
+				<div class="border">
+					<p>First Name</p>
+					<input type="text" name="firstName" placeholder="First name" class="input-text height"id="firstName"/><br/></div>
+				<div class="border">
+					<p>Last Name</p>
+					<input type="text" name="lastName" placeholder="Last Name" class="input-text height" id="lastName"/><br/></div>
+				<div class="border">
+					<p>Age</p>
+					<input type="number" name="age" placeholder="Age" class="input-text height" id="age"/></div>
+			</fieldset>
+			
+
+			<input type="button" name="add" value="Add" class="button" onclick="createUser()" />
+			<input type="button" name="clear" value="Clear" class="button" onclick='clearForm()'/>
+			<div id="result">
+				
+			</div>
+		</form>
+	</body>
+</html>

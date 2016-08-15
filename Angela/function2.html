@@ -7,23 +7,23 @@
 <body>
 	<script>
 
-	function check1(x){
+	function signOfNumber(x){
 		if (x<0){
-			return "< 0";
+			return -1;
 		}
 		if (x>0) {
-			return "> 0";
+			return 1;
 		}
 		if (x==0) {
-			return "= 0";
+			return 0;
 		}
 		else {
-			return "is not a Number"
+			return "is not a Number";
 		}
 	}
 
 
-	function check2(x){
+	function primeNumber(x){
 		if (x==0 || x==1){
 			return false;
 		}
@@ -33,32 +33,42 @@
 		return true;
 	}
 
-	function check3(x){
-		if (x%2==0 && x%5==0 && x%3==0 && x%6==0 && x%9==0){
-			return true;
+	function divideNumber(x){
+		var divconcat=[];
+		for (i=0; i<dividers.length; i++){
+			if (x%dividers[i]==0){
+				divconcat=divconcat.concat(dividers[i]);
+			}
 		}
-		else {
-			return false;
-		}
+		return divconcat;
 	}
-	var value=prompt("Enter a number","");
-	console.log(value+" "+check1(value));
 
-	var result2=check2(value);
-	if (result2) {
+
+	var value=prompt("Enter a number","");
+
+	var signResult=signOfNumber(value);
+	if (signResult=1){
+		console.log(value+" > 0");
+	}
+	else 
+		if (signResult=-1){
+		console.log(value+" < 0");
+	}
+	else{
+		console.log(value+" = 0");
+	}
+
+
+	var primeResult=primeNumber(value);
+	if (primeResult) {
 		console.log(value+" is a prime number")
 	}
 	else {
 		console.log(value+" is not a prime number");
 	}
 
-	var result3=check3(value);
-	if (result3){
-		console.log(value+" can be divided into 2,3,5,6,9");
-	}
-	else{
-		console.log(value+" cannot be divided into 2,3,5,6,9");
-	}
+	var dividers=[2,5,3,6,9];
+	console.log(value+" can be divided into "+divideNumber(value));
 	</script>	
 </body>
 </html>
